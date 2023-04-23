@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c4h6asmj3i8p5" path="res://assets/rupy.png" id="2_xiip6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgbhh"]
+radius = 32.0
+height = 108.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_osst1"]
 animations = [{
@@ -22,6 +24,8 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_mask = 2
 script = ExtResource("1_g5h4e")
 speed = 500.0
 
@@ -29,4 +33,7 @@ speed = 500.0
 shape = SubResource("CapsuleShape2D_pgbhh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -12)
 sprite_frames = SubResource("SpriteFrames_osst1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
