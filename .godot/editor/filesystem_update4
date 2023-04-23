@@ -1,0 +1,7 @@
+res://scenes/overworld/overworld.tscn
+res://actors/rupy/sprite_frames.tres
+res://scenes/overworld/new_tile_set.tres
+res://actors/enemies/dummy.tres
+res://scenes/battle/battle.gd
+res://scenes/battle/battle.tscn
+res://scenes/game.tscn

@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://dwsgqvp2i3tf5"]
+
+[ext_resource type="Texture2D" uid="uid://vy1sh87p771g" path="res://assets/sloppymess.png" id="1_ljs18"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adrps"]
+atlas = ExtResource("1_ljs18")
+region = Rect2(0, 64, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adrps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
