@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqhucordi33re"]
+
+[ext_resource type="Texture2D" uid="uid://vy1sh87p771g" path="res://assets/sloppymess.png" id="1_k1quw"]
+[ext_resource type="Script" path="res://scenes/overworld/encounter_tile.gd" id="1_v6ls6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adrps"]
+atlas = ExtResource("1_k1quw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joneb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adrps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whtga"]
+size = Vector2(32, 32)
+
+[node name="EncounterTile" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_v6ls6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_joneb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_whtga")
