@@ -1,3 +1,4 @@
 extends Node
 
-signal encounter_started
+signal battle_started
+signal battle_ended

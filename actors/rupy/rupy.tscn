@@ -1,14 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://btmp5hv5l86a7"]
+[gd_scene load_steps=6 format=3 uid="uid://bca4jgvsctjn7"]
 
-[ext_resource type="PackedScene" uid="uid://c54ms46g1c5vm" path="res://actors/character_body_2d.tscn" id="1_uovyc"]
+[ext_resource type="PackedScene" uid="uid://c42t4uw8fou4c" path="res://actors/character.tscn" id="1_0llaw"]
 [ext_resource type="SpriteFrames" uid="uid://n8vay4rlcm25" path="res://actors/rupy/sprite_frames.tres" id="2_m6ncu"]
 [ext_resource type="Script" path="res://actors/rupy/player.gd" id="2_w6325"]
+[ext_resource type="Resource" uid="uid://c3awwieddf2yn" path="res://resources/attacks/basic_attack.tres" id="3_csy0d"]
 [ext_resource type="Shape2D" uid="uid://cfowlyxpwqg37" path="res://actors/rupy/collision_shape_2d.tres" id="3_qsd15"]
 
-[node name="Rupy" instance=ExtResource("1_uovyc")]
+[node name="Rupy" instance=ExtResource("1_0llaw")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("2_w6325")
 speed = 500.0
+attack_list = Array[Resource("res://resources/attacks/attack.gd")]([ExtResource("3_csy0d")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_m6ncu")

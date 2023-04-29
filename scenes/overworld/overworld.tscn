@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpv3x412oge71"]
+[gd_scene load_steps=3 format=3 uid="uid://dpv3x412oge71"]
 
 [ext_resource type="TileSet" uid="uid://dijpyq3q1qp58" path="res://scenes/overworld/new_tile_set.tres" id="1_5egyb"]
+[ext_resource type="Script" path="res://scenes/overworld/overworld.gd" id="1_yp08x"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Overworld" type="Node2D"]
+script = ExtResource("1_yp08x")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_5egyb")
@@ -23,3 +25,6 @@ layer_2/y_sort_enabled = false
 layer_2/y_sort_origin = 0
 layer_2/z_index = 0
 layer_2/tile_data = PackedInt32Array()
+
+[node name="SpawnPoint" type="Marker2D" parent="."]
+position = Vector2(107, 249)

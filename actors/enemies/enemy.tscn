@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvbe8fylby8mc"]
+
+[ext_resource type="PackedScene" uid="uid://c42t4uw8fou4c" path="res://actors/character.tscn" id="1_oq4y5"]
+[ext_resource type="Script" path="res://actors/enemies/enemy.gd" id="2_33v58"]
+[ext_resource type="Script" path="res://actors/enemies/ai.gd" id="3_fxd3w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jkvwi"]
+
+[node name="Enemy" instance=ExtResource("1_oq4y5")]
+script = ExtResource("2_33v58")
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = false
+shape = SubResource("CapsuleShape2D_jkvwi")
+
+[node name="AI" type="Node2D" parent="." index="2"]
+script = ExtResource("3_fxd3w")

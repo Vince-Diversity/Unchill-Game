@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Attack" load_steps=2 format=3 uid="uid://c3awwieddf2yn"]
+
+[ext_resource type="Script" path="res://resources/attacks/attack.gd" id="1_oypau"]
+
+[resource]
+script = ExtResource("1_oypau")
+name = "Basic Attack"
+base_damage = 10

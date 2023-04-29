@@ -1,11 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://kr0ajufbmuiv"]
+[gd_scene load_steps=6 format=3 uid="uid://da423vmee21pb"]
 
 [ext_resource type="TileSet" uid="uid://dijpyq3q1qp58" path="res://scenes/overworld/new_tile_set.tres" id="1_3670p"]
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_fkbcl"]
-[ext_resource type="PackedScene" uid="uid://htfne0jjonoj" path="res://actors/enemies/dummy.tscn" id="2_688cx"]
+[ext_resource type="PackedScene" uid="uid://cj5vwwpob266d" path="res://actors/enemies/dummy.tscn" id="3_xy62t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3giq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="GDScript" id="GDScript_dqq0j"]
+script/source = "extends VBoxContainer
+
+"
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_fkbcl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(553, 339)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_3670p")
@@ -15,11 +29,49 @@ layer_0/tile_data = PackedInt32Array(0, 393216, 1, 35, 393216, 1, 34, 393216, 1,
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Enemy1" type="Marker2D" parent="Enemies"]
+position = Vector2(641, 341)
 
-[node name="Dummy" parent="Enemies/Enemy1" instance=ExtResource("2_688cx")]
-position = Vector2(646, 345)
+[node name="Dummy" parent="Enemies/Enemy1" instance=ExtResource("3_xy62t")]
 
-[node name="Ally" type="Node2D" parent="."]
-
-[node name="Ally1" type="Marker2D" parent="Ally"]
+[node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(469, 342)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Log" type="CenterContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/Log"]
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="UI/Log/PanelContainer"]
+layout_mode = 2
+
+[node name="TextBox" type="PanelContainer" parent="UI/Log/PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_i3giq")
+
+[node name="BattleLog" type="RichTextLabel" parent="UI/Log/PanelContainer/TextBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "A battle log reeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+
+[node name="Actions" type="PanelContainer" parent="UI"]
+offset_left = 274.0
+offset_top = 255.0
+offset_right = 376.0
+offset_bottom = 378.0
+
+[node name="Panel" type="Panel" parent="UI/Actions"]
+layout_mode = 2
+
+[node name="ActionList" type="VBoxContainer" parent="UI/Actions"]
+layout_mode = 2
+alignment = 1
+script = SubResource("GDScript_dqq0j")

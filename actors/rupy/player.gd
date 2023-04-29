@@ -7,7 +7,8 @@ var current_state: int = State.MOVING
 
 
 func _ready():
-	Events.encounter_started.connect(_on_encounter_started)
+	Events.battle_started.connect(_on_battle_started)
+	Events.battle_ended.connect(_on_battle_ended)
 
 
 func _physics_process(_delta):
@@ -20,5 +21,9 @@ func _physics_process(_delta):
 			pass
 
 
-func _on_encounter_started():
+func _on_battle_started():
 	current_state = State.BATTLING
+
+
+func _on_battle_ended():
+	current_state = State.MOVING

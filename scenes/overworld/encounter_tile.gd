@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_body_entered(_body: Node2D):
-	Events.encounter_started.emit()
+	Events.battle_started.emit()

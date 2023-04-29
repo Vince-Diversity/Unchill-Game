@@ -1,17 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://htfne0jjonoj"]
+[gd_scene load_steps=3 format=3 uid="uid://cj5vwwpob266d"]
 
-[ext_resource type="PackedScene" uid="uid://c54ms46g1c5vm" path="res://actors/character_body_2d.tscn" id="1_04b30"]
-[ext_resource type="Script" path="res://actors/enemies/dummy.gd" id="2_ehvrq"]
+[ext_resource type="PackedScene" uid="uid://bvbe8fylby8mc" path="res://actors/enemies/enemy.tscn" id="1_bao1h"]
 [ext_resource type="SpriteFrames" uid="uid://7g8ddhimbguf" path="res://actors/enemies/dummy.tres" id="3_yqv70"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jkvwi"]
-
-[node name="Dummy" instance=ExtResource("1_04b30")]
-script = ExtResource("2_ehvrq")
+[node name="Dummy" instance=ExtResource("1_bao1h")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("3_yqv70")
-
-[node name="CollisionShape2D" parent="." index="1"]
-visible = false
-shape = SubResource("CapsuleShape2D_jkvwi")
