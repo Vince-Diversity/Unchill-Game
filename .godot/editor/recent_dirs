@@ -1,3 +1,4 @@
+res://assets
 res://actors/enemies
 res://resources/attacks
 res://resources/attacks/
@@ -5,4 +6,3 @@ res://scenes
 res://scenes/overworld
 res://scenes/battle
 res://actors/rupy
-res://assets

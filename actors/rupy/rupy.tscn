@@ -7,13 +7,14 @@
 [ext_resource type="Shape2D" uid="uid://cfowlyxpwqg37" path="res://actors/rupy/collision_shape_2d.tres" id="3_qsd15"]
 
 [node name="Rupy" instance=ExtResource("1_0llaw")]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("2_w6325")
 speed = 500.0
 attack_list = Array[Resource("res://resources/attacks/attack.gd")]([ExtResource("3_csy0d")])
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = ExtResource("2_m6ncu")
+animation = &"walk_down"
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = ExtResource("3_qsd15")
